@@ -11,6 +11,13 @@
     "url": "git+https://github.com/Jake-Ruston/fortnite.git"
   },
   "author": "Jake Ruston <rjake@hotmail.co.uk>",
+  "contributors": [
+    {
+      "name": "Dim",
+      "email": "dimggyt@gmail.com",
+      "url": "https://dim.codes"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jake-Ruston/fortnite/issues"
