@@ -6,7 +6,7 @@ const { load } = require('cheerio');
 
 /**
  * @param {string} username The username of the player
- * @param {string} platform Either `pc` `psn` or `xbox`
+ * @param {string} platform Either `pc` `psn` or `xbl`
  * @returns {Promise<Object>} Object containing info for this player
  */
 

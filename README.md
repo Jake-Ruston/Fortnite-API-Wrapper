@@ -12,4 +12,4 @@ const fortnite = require('fortnite');
 fortnite('mrappi', 'pc').then(data => console.log(data));
 ```
 - `username` is required and must be a string.
-- `platform` is `pc` by default. Possible platforms are: `pc`, `xbox` `psn`.
+- `platform` is `pc` by default. Possible platforms are: `pc`, `xbl` `psn`.
