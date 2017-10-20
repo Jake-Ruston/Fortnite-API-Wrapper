@@ -9,10 +9,7 @@ $ npm install fortnite
 ```js
 // require the package
 const fortnite = require('fortnite');
-```
-## Methods
-```js
-fortnite('mrappi', 'pc').then(console.log);
+fortnite('mrappi', 'pc').then(data => console.log(data));
 ```
 - `username` is required and must be a string.
 - `platform` is `pc` by default. Possible platforms are: `pc`, `xbox` `psn`.
