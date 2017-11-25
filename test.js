@@ -1,5 +1,5 @@
 const fortnite = require('.');
 
-fortnite('mrappi').then(data => {
-  console.log(data);
+fortnite('monsterdface').then(data => {
+  console.log(data.group);
 });
