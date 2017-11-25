@@ -1,5 +1,5 @@
 # Fortnite
-A simple to use module for interacting with the Fortnite API.
+A simple to use module for interacting with the FortniteTracker API.
 
 ## Install
 ```
@@ -64,6 +64,6 @@ fortnite('mrappi', 'pc').then(data => console.log(data));
     Data { stat: 'timePlayed', value: '4421' },
     Data { stat: 'killsPerMin', value: '0.33' },
     Data { stat: 'killsPerMatch', value: '3.93' }
-  ] 
+  ]
 }
 ```
