@@ -23,14 +23,18 @@ module.exports = (username, platform = 'pc') => {
       if (!text.startsWith('var ')) return;
       json[text.split(' ')[1]] = JSON.parse(text.match(/\[?{.*}\]?/)[0]);
     });
-    resolve({
-      info: new Info(json.accountInfo),
-      lifetimeStats: json.LifeTimeStats.map(stat => new Stat(stat)),
-      group: {
-        solo: json.playerData.p2 === undefined ? null : json.playerData.p2.map(data => new Data(data)),
-        duo: json.playerData.p10 === undefined ? null :  json.playerData.p10.map(data => new Data(data)),
-        squad: json.playerData.p9 === undefined ? null :  json.playerData.p9.map(data => new Data(data))
-      }
-    });
+    if(json.accountInfo){
+      resolve({
+        info: new Info(json.accountInfo),
+        lifetimeStats: json.LifeTimeStats.map(stat => new Stat(stat)),
+        group: {
+          solo: json.playerData.p2 === undefined ? null : json.playerData.p2.map(data => new Data(data)),
+          duo: json.playerData.p10 === undefined ? null :  json.playerData.p10.map(data => new Data(data)),
+          squad: json.playerData.p9 === undefined ? null :  json.playerData.p9.map(data => new Data(data))
+        }
+      });
+    }else{
+      reject("Player Not Found");
+    }
   });
 };
