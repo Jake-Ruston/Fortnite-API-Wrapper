@@ -25,6 +25,6 @@
   "homepage": "https://github.com/Jake-Ruston/fortnite#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "snekfetch": "^3.5.2"
+    "snekfetch": "^3.5.3"
   }
 }

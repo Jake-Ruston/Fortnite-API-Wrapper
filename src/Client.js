@@ -1,8 +1,8 @@
 const Info = require('./Info');
 const Stat = require('./Stat');
 const Data = require('./Data');
-const { get } = require('snekfetch');
 const { load } = require('cheerio');
+const fetch = require('node-fetch');
 
 /**
  * @param {string} username The username of the player
@@ -14,7 +14,8 @@ module.exports = (username, platform = 'pc') => {
   return new Promise(async (resolve, reject) => {
     if (typeof username !== 'string' || typeof username === 'undefined') reject('You must supply a username to search for.');
 
-    const { text } = await get(`https://fortnitetracker.com/profile/${platform.toLowerCase()}/${username}`);
+    const res = await fetch(`https://fortnitetracker.com/profile/${platform.toLowerCase()}/${username}`);
+    const text = await res.text();
     const $ = load(text);
     if (!$('#profile').length) throw new Error('404');
     const json = {};
