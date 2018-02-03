@@ -1,7 +1,5 @@
-const fortnite = require('.');
+const c = new (require('.'))('');
 
-fortnite('monsterdface').then(data => {
-  console.log(data.group);
-});
+c.getInfo('zerotwothreezero').then(console.log);
 
 process.on('unhandledRejection', console.log);
