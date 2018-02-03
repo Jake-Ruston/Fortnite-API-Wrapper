@@ -1,5 +1,4 @@
 const Account = require('./Account');
-const Data = require('./Data');
 const { get } = require('snekfetch');
 const platforms = ['pc', 'xbl', 'psn'];
 
