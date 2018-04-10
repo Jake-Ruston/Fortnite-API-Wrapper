@@ -22,5 +22,5 @@ const { Client } = require('fortnite');
 const fortnite = new Client('Your-API-Key');
 
 // Get the stats of an Xbox player by the name of Number1Swifty
-forrnite.get('Number1Swifty', 'xbox').then(console.log);
+fortnite.get('Number1Swifty', 'xbox').then(console.log);
 ```
