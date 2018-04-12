@@ -26,10 +26,14 @@ class Client{
       }catch(err){
         return reject(err.message);
       }
-      const json = JSON.parse(res.text);
-      if(json.error) return reject(json.error);
 
-      resolve(new Account(json));
+      try {
+          const json = JSON.parse(res.text);
+          resolve(new Account(json));
+      } catch (err) {
+          reject(err)
+      }
+
     });
   }
 
