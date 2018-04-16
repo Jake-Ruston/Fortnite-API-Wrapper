@@ -21,8 +21,9 @@ class Client{
       if(!platforms.includes(platform)) reject('Invalid platform.');
 
       let res;
+      let usernameEncoded = encodeURI(username); // Preventing error 400 for username like "Wιℓℓ"
       try{
-        res = await get(`https://api.fortnitetracker.com/v1/profile/${platform}/${username}`).set({ 'TRN-Api-Key': this.apiKey });
+        res = await get(`https://api.fortnitetracker.com/v1/profile/${platform}/${usernameEncoded}`).set({ 'TRN-Api-Key': this.apiKey });
       }catch(err){
         return reject(err.message);
       }
