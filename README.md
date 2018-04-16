@@ -1,8 +1,8 @@
-# Fortnite [![npm downloads](https://img.shields.io/npm/dt/fortnite.svg?maxAge=3600)](https://www.npmjs.com/package/fortnite) [![Dependencies](https://img.shields.io/david/ickerio/fortnite.svg?maxAge=3600)](https://david-dm.org/ickerio/fortnite) [![RunKit](https://badge.runkitcdn.com/fortnite.svg)](https://npm.runkit.com/fortnite)
+# Fortnite [![npm downloads](https://img.shields.io/npm/dt/fortnite.svg?maxAge=3600)](https://www.npmjs.com/package/fortnite) [![Dependencies](https://img.shields.io/david/jake-ruston/fortnite.svg?maxAge=3600)](https://david-dm.org/jake-ruston/fortnite) [![RunKit](https://badge.runkitcdn.com/fortnite.svg)](https://npm.runkit.com/fortnite)
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Fortnite.png" width="250" align="right" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Fortnite.png" alt="fortnite" width="250" align="right" />
 
-###### [Docs](docs/api.md) | [Issues](https://github.com/ickerio/fortnite/issues)
+###### [Docs](docs/api.md) | [Issues](https://github.com/Jake-Ruston/fortnite/issues)
 
 A simple, easy to use module for interacting with the [FortniteTracker](https://fortnitetracker.com/) [API](https://fortnitetracker.com/site-api)
 
