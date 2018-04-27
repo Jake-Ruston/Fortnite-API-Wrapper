@@ -17,7 +17,7 @@ $ npm i fortnite
 ## Getting Started
 ```js
 // Bring in the Fortnite module
-const { Client } = require('fortnite');
+const Client = require('fortnite');
 // Create an instance of the client with your API Key
 const fortnite = new Client('Your-API-Key');
 
