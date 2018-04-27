@@ -2,7 +2,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Fortnite.png" alt="fortnite" width="250" align="right" />
 
-###### [Docs](docs/api.md) | [Issues](https://github.com/Jake-Ruston/fortnite/issues)
+###### [Changelog](docs/log.md) | [Issues](https://github.com/Jake-Ruston/fortnite/issues)
 
 A simple, easy to use module for interacting with the [FortniteTracker](https://fortnitetracker.com/) [API](https://fortnitetracker.com/site-api)
 
