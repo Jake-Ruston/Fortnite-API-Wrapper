@@ -4,9 +4,11 @@ class Mode {
    * @param {Object} data All of the type data resolved from the API
    */
   constructor(data) {
+    this.trn_rating = data.trnRating.valueInt;
     this.score = data.score.valueInt;
     this.kd = data.kd.valueDec;
     this.matches = data.matches.valueInt;
+    this.win_ratio = data.winRatio.valueDec;
     this.kills = data.kills.valueInt;
     this.kills_per_match = data.kpg.valueDec;
     this.score_per_match = data.scorePerMatch.valueDec;
