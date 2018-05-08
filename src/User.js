@@ -30,7 +30,10 @@ const modes = {
   p9: 'squad',
   curr_p2: 'current_solo',
   curr_p10: 'current_duo',
-  curr_p9: 'current_squad'
+  curr_p9: 'current_squad',
+  prior_p2: 'prior_solo',
+  prior_p10: 'prior_duo',
+  prior_p9: 'prior_squad'
 };
 
 module.exports = User;
