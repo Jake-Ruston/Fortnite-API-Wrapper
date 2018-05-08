@@ -1,5 +1,6 @@
 const Mode = require('./Mode');
 const Stat = require('./Stat');
+const Lifetime = require('./Lifetime');
 
 /** Class representing a full user */
 class User {
@@ -18,9 +19,8 @@ class User {
       this.stats[modes[mode]] = new Mode(data.stats[mode]);
     }
 
-    // TODO: Make lifetime single objects and not an array
-    // Will be updated in a newer version
-    this.stats.lifetime = data.lifeTimeStats.map(stat => new Stat(stat));
+    // Lifetime stats made into single objects from array
+    this.stats.lifetime = new Lifetime(data.lifeTimeStats);
   }
 }
 
