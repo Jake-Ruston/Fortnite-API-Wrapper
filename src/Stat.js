@@ -2,9 +2,12 @@
 class Stat {
   /**
    * @param {Object} data All of the stat data resolved from the API
+   * @returns {Object}
    */
-  constructor(data) {
-    this[data.key] = data.value;
+  static objectify(data) {
+    const obj = {};
+    data.forEach(stat => obj[stat.key] = stat.value);
+    return obj;
   }
 }
 

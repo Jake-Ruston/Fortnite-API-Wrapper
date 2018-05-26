@@ -9,7 +9,7 @@ const User = require('./User');
  */
 class Client {
   /**
-   * @param {string} key The API Key from FortniteTracker
+   * @param {String} key The API Key from FortniteTracker
    */
   constructor(key) {
     this.url = 'https://api.fortnitetracker.com/v1';
@@ -29,12 +29,12 @@ class Client {
   /**
    * Gets the stats of a certain user
    *
-   * @param {string} username The username to search for
-   * @param {string} platform The platform that the user plays on
+   * @param {String} username The username to search for
+   * @param {String} platform The platform that the user plays on
    * @returns {Promise<Object>}
    */
-  user(username, platform) {
-    return new Promise((resolve, reject) => {
+  async user(username, platform) {
+    return new Promise(async (resolve, reject) => {
       // No values given
       if (!username) return reject(new Error('You must supply a username'));
       if (!platform) return reject(new Error('You must supply a platform'));
@@ -46,30 +46,28 @@ class Client {
       let result;
       let data;
 
-      (async () => {
-        try {
-          username = encodeURI(username);
-          platform = this.getPlatform(platform);
+      try {
+        username = encodeURI(username);
+        platform = this.getPlatform(platform);
+        if (!platform) return reject(new TypeError('Invalid platform'));
 
-          result = await fetch(`${this.url}/profile/${platform}/${username}`, this.headers);
-          data = await result.json();
-        } catch (err) {
-          return reject(err);
-        }
+        result = await fetch(`${this.url}/profile/${platform}/${username}`, this.headers);
+        data = await result.json();
+      } catch (err) {
+        return reject(err);
+      }
 
-        if (data.error === 'Player Not Found') return reject(new Error('User not found'));
-        return resolve(new User(data));
-      })();
+      if (data.error === 'Player Not Found') return reject(new Error('User not found'));
+      return resolve(new User(data));
 
-      return undefined;
     });
   }
 
   /**
    * Gets the correct platform from a hash map
    *
-   * @param {string} platform The platform to get
-   * @returns {void}
+   * @param {String} platform The platform to get
+   * @returns {String}
    */
   getPlatform(platform) {
     if (platform in this.platforms) {
@@ -82,8 +80,7 @@ class Client {
       }
     }
 
-    return undefined;
+    return null;
   }
 }
-
 module.exports = Client;

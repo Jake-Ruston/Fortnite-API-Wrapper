@@ -3,6 +3,7 @@ const Stat = require('./Stat');
 
 /** Class representing a full user */
 class User {
+
   /**
    * @param {Object} data All of the data resolved from the API
    */
@@ -15,12 +16,12 @@ class User {
 
     for (const mode in data.stats) {
       // Replace the playlist id with its name for the keys
-      this.stats[modes[mode]] = new Mode(data.stats[mode]);
+      const key = modes[mode];
+      if (!key) continue;
+      this.stats[key] = Mode.objectify(data.stats[mode]);
     }
 
-    // TODO: Make lifetime single objects and not an array
-    // Will be updated in a newer version
-    this.stats.lifetime = data.lifeTimeStats.map(stat => new Stat(stat));
+    this.stats.lifetime = Stat.objectify(data.lifeTimeStats);
   }
 }
 
