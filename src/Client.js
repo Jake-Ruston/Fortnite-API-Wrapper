@@ -54,6 +54,12 @@ module.exports = class Client {
     const result = await fetch(`${URL}/store`, this.headers);
     const data = await result.json();
 
+    // Invalid API Key
+    if (data.message === 'Invalid authentication credentials') throw new Error(data.message);
+
+    // Handling any other error
+    else if (data.error) return data;
+
     return data.map(item => new Store(item));
   }
 
@@ -63,6 +69,12 @@ module.exports = class Client {
   async challenges() {
     const result = await fetch(`${URL}/challenges`, this.headers);
     const data = await result.json();
+
+    // Invalid API Key
+    if (data.message === 'Invalid authentication credentials') throw new Error(data.message);
+
+    // Handling any other error
+    else if (data.error) return data;
 
     return data.items.map(item => new Challenge(item));
   }
