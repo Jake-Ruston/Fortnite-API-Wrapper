@@ -1,6 +1,6 @@
 {
   "name": "fortnite",
-  "version": "4.1.2",
+  "version": "4.2.2",
   "description": "An API wrapper, for Fortnite, around the FortniteTracker API.",
   "main": "index.js",
   "repository": {

@@ -33,7 +33,7 @@ module.exports = class Client {
     if (typeof username !== 'string') throw new TypeError(`Username expects a string, ${typeof username} given`);
     if (typeof platform !== 'string') throw new TypeError(`Platform expects a string, ${typeof platform} given`);
 
-    const result = await fetch(`${URL}/profile/${platform}/${username}`, this.headers);
+    const result = await fetch(`${URL}/profile/${platform}/${encodeURIComponent(username)}`, this.headers);
     const data = await result.json();
 
     // Invalid API Key
