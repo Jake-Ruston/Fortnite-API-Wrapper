@@ -40,7 +40,7 @@ module.exports = class Client {
     if (data.message === 'Invalid authentication credentials') throw new Error(data.message);
 
     // Handling Player Not Found error
-    if (data.error === 'Player Not Found') return { code: 404, error: data.error };
+    if (data.error === 'Player Not Found') return { code: 404, error: 'Player Not Found' };
     // Handling any other error
     else if (data.error) return data;
 
