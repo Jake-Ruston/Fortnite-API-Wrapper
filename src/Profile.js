@@ -22,8 +22,7 @@ module.exports = class Profile {
       this.stats[modes[mode]] = new Mode(profile.stats[mode]);
     }
 
-    // TODO: Make a single object rather than an array of objects, for both.
-    this.stats.lifetime = profile.lifeTimeStats.map(stat => new Stat(stat));
+    this.stats.lifetime = profile.lifeTimeStats.map(stat => new Stat(stat)).reduce((a, b) => ({ ...a, ...b }));
     this.stats.recent = profile.recentMatches.map(game => new Game(game));
   }
 };

@@ -1,3 +1,4 @@
+test/config.js
 node_modules/
 .npmignore
 .npmrc
